@@ -118,14 +118,39 @@ Open twice ST with following command. Each time Wait for all packages to install
 stt
 ```
 
+```bash
+
+```
 
 ## Step 7: GitHub
 
-Follow [this guide](https://sourabhbajaj.com/mac-setup/Git/) for config.
+Test if Git is properly installed:
+
+```bash
+git --version
+```
+And which git should output /usr/local/bin/git.
+
+Next, we'll define your Git user (should be the same name and email you use for GitHub):
+
+```bash
+git config --global user.name "Your Name Here"
+git config --global user.email "your_email@youremail.com"
+```
+They will get added to your .gitconfig file.
+
+To push code to your GitHub repositories, we're going to use the recommended HTTPS method (versus SSH). To prevent git from asking for your username and password every time you push a commit you can cache your credentials by running the following command, as described in the [instructions](https://help.github.com/en/articles/caching-your-github-password-in-git).
+
+```bash
+git config --global credential.helper osxkeychain
+```
+FOR SSH auth or other setup:
+
+- Follow [this guide](https://sourabhbajaj.com/mac-setup/Git/) for config.
 
 AND/OR
 
-Follow [official guide](https://help.github.com/en/articles/set-up-git) to Set up GitHub terminal login
+- Follow [official guide](https://help.github.com/en/articles/set-up-git) to Set up GitHub terminal login
 
 
 ## Step 8: Ruby
@@ -169,4 +194,6 @@ gem install hub bundler rspec rubocop rubocop-performance pry pry-byebug colored
 ```
 
 
-Special thanks to this [MacOs setup guide](https://sourabhbajaj.com/mac-setup/Homebrew/Cask.html)
+Special thanks to:
+- This [MacOs setup guide](https://sourabhbajaj.com/mac-setup/Homebrew/Cask.html) by Sourabh Bajaj
+- Mathias dotfiles [mathiasbynens](https://mths.be/dotfiles)
