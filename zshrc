@@ -22,6 +22,8 @@ type -a rbenv > /dev/null && eval "$(rbenv init -)"
 # So instead of running `bin/rails` like the doc says, just run `rails`
 # Same for `./node_modules/.bin` and nodejs
 export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
+# OLD exported PATH
+# export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/opt/bin:/usr/local/bin:$PATH"
 
 # Store your own aliases in the ~/.aliases file and load them here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
@@ -29,3 +31,12 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"

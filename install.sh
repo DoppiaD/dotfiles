@@ -1,24 +1,24 @@
 cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
-
-echo "Install Command Line tools?"
-read clt_reply
-
-if [[ clt_reply =~ ^[Yy]$ ]]; then
-  xcode-select --install
-fi;
-
-echo "👌  CLT all done"
-
-echo "Install HomeBrew and Git + Sqlite + PyEnv + Rbenv + other basic formulae?"
-read brew_reply
-
-if [[ brew_reply =~ ^[Yy]$ ]]; then
-  ./brew.sh
-fi;
-
-echo "👌  Brew all done"
+#
+# echo "Install Command Line tools?"
+# read clt_reply
+#
+# if [[ clt_reply =~ ^[Yy]$ ]]; then
+#   xcode-select --install
+# fi;
+#
+# echo "CLT all done"
+#
+# echo "Install HomeBrew and Git + Sqlite + PyEnv + Rbenv + other basic formulae?"
+# read brew_reply
+#
+# if [[ brew_reply =~ ^[Yy]$ ]]; then
+#   ./brew.sh
+# fi;
+#
+# echo "Brew all done"
 
 echo "New Mac? Do you want to install basic preferences?"
 read mac_reply
@@ -27,9 +27,9 @@ if [[ mac_reply =~ ^[Yy]$ ]]; then
   ./.macos
 fi;
 
-echo "👌  MacOS preferences all done"
+echo "MacOS preferences all done"
 
-echo "Moving and exectuing backup of dotfiles now..."
+echo "Moving and executing backup of dotfiles now..."
 
 backup() {
   target=$1
@@ -95,7 +95,7 @@ ln -s $PWD/SublimeLinter.sublime-settings $SUBL_PATH/Packages/User/SublimeLinter
 
 zsh ~/.zshrc
 
-echo "👌  All finished"
+echo "All finished"
 #
 # function doIt() {
 # 	rsync --exclude ".git/" \

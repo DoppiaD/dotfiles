@@ -1,18 +1,13 @@
 # New Mac setup guide with Dotfiles
-## Specific focus on Sublime Text and ruby on rails setup
 
 
-## Step 1: Sublime Text 3 - Your text editor
-
-Install [ST3](http://www.sublimetext.com/3)
-
-## Step 2: Command Line Tools
+## Step 1: Command Line Tools
 
 ```bash
 xcode-select --install
 ```
 
-## Step 3: Homebrew
+## Step 2: Homebrew
 
 Install [Homebrew](http://brew.sh/) Package Manager.
 
@@ -56,7 +51,7 @@ Cleanup brew:
 brew cleanup
 ```
 
-## Step 4: iTerm2
+## Step 3: iTerm2
 
 iTerm2
 
@@ -89,7 +84,7 @@ Open up iTerm2 `Preferences (⌘ + ,) -> Profiles -> Keys ->` Click on + icon (a
 | ⌥→  |  Send Escape Sequence |  f |
 
 
-## Step 5: Oh-my-zsh
+## Step 4: Oh-my-zsh
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -102,14 +97,14 @@ $ source ~/.zshrc
 ```
 
 
-## Step 6: GitHub
+## Step 5: GitHub
 
 Follow [this guide](https://sourabhbajaj.com/mac-setup/Git/) for config.
 
 Follow [official guide](https://help.github.com/en/articles/set-up-git) to Set up GitHub terminal login
 
 
-## Step 7: Dotfiles Install
+## Step 6: Dotfiles Install
 
 Clone dotfiles from github and run install script
 
@@ -124,7 +119,7 @@ OPTIONAL: Run the git installer:
 zsh git_setup.sh
 ```
 
-### Step 8: Sublime Text config
+### Step 7: Sublime Text config
 
 Open twice ST with following command. Each time Wait for all packages to install (they are defined in DotFiles preferences).  
 
@@ -132,7 +127,7 @@ Open twice ST with following command. Each time Wait for all packages to install
 stt
 ```
 
-## Step 9: Ruby
+## Step 8: Ruby
 
 List all available Ruby versions:
 ```bash
