@@ -185,9 +185,7 @@ Check Ruby version:
 ruby -v
 ```
 
-### Installing some gems
-
-Basic Gems:
+### Basic gems install
 
 ```bash
 gem install hub bundler rspec rubocop rubocop-performance pry pry-byebug colored octokit rake
