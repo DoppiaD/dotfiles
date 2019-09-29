@@ -31,10 +31,10 @@ brew update
 Basic packages to install with brew:
 
 ```bash
-brew install git wget jq openssl rbenv ruby-build pyenv node sqlite yarn tree
+brew install git wget jq openssl rbenv pyenv node sqlite yarn tree
 ```
 
-Basic apps to install with brew. Do not open them until finished DotFiles install!!:
+Basic apps to install with brew. **Do not open them until finished DotFiles install!!**:
 
 ```bash
 brew cask install dropbox sublime-text transmission google-chrome firefox vlc grandperspective
@@ -97,29 +97,20 @@ $ source ~/.zshrc
 ```
 
 
-## Step 5: GitHub
+## Step 5: Dotfiles Install
 
-Follow [this guide](https://sourabhbajaj.com/mac-setup/Git/) for config.
-
-Follow [official guide](https://help.github.com/en/articles/set-up-git) to Set up GitHub terminal login
-
-
-## Step 6: Dotfiles Install
-
-Clone dotfiles from github and run install script
-
+Clone dotfiles from Github and run install script from inside the cloned folder
 
 ```bash
+# Clone dotfiles
+git clone https://github.com/DoppiaD/dotfiles.git
+
+# Install dotfiles
 zsh install.sh
 ```
 
-OPTIONAL: Run the git installer:
 
-```bash
-zsh git_setup.sh
-```
-
-### Step 7: Sublime Text config
+### Step 6: Sublime Text config
 
 Open twice ST with following command. Each time Wait for all packages to install (they are defined in DotFiles preferences).  
 
@@ -127,16 +118,37 @@ Open twice ST with following command. Each time Wait for all packages to install
 stt
 ```
 
+
+## Step 7: GitHub
+
+Follow [this guide](https://sourabhbajaj.com/mac-setup/Git/) for config.
+
+AND/OR
+
+Follow [official guide](https://help.github.com/en/articles/set-up-git) to Set up GitHub terminal login
+
+
 ## Step 8: Ruby
 
-List all available Ruby versions:
+[Official Rbenv guide](https://github.com/rbenv/rbenv#choosing-the-ruby-version)
+
+Command to set up rbenv in the shell, after setup complete close terminal window and reopen new one:
 ```bash
-rbenv versions
+rbenv init
 ```
 
-Pick latest or desired Ruby version to install:
+Verify that rbenv is properly set up using this rbenv-doctor script:
 ```bash
-rbenv install 2.6.3
+$ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+```
+
+Pick latest or desired Ruby version to install. Select versione (2.6.3 latest atm):
+```bash
+# list all available versions:
+$ rbenv install -l
+
+# install a Ruby version:
+$ rbenv install 2.6.3
 ```
 Set global Ruby version:
 
@@ -153,7 +165,7 @@ ruby -v
 Basic Gems:
 
 ```bash
-gem install hub bundler rspec rubocop rubocop-performance pry pry-byebug  colored octokit rake
+gem install hub bundler rspec rubocop rubocop-performance pry pry-byebug colored octokit rake
 ```
 
 
