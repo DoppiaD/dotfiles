@@ -1,111 +1,165 @@
-# Mathias’s dotfiles
+# New Mac setup guide with Dotfiles
+## Specific focus on Sublime Text and ruby on rails setup
 
-![Screenshot of my shell prompt](https://i.imgur.com/EkEtphC.png)
 
-## Installation
+## Step 1: Sublime Text 3 - Your text editor
 
-**Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+Install [ST3](http://www.sublimetext.com/3)
 
-### Using Git and the bootstrap script
-
-You can clone the repository wherever you want. (I like to keep it in `~/Projects/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
+## Step 2: Command Line Tools
 
 ```bash
-git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && source bootstrap.sh
+xcode-select --install
 ```
 
-To update, `cd` into your local `dotfiles` repository and then:
+## Step 3: Homebrew
+
+Install [Homebrew](http://brew.sh/) Package Manager.
 
 ```bash
-source bootstrap.sh
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Alternatively, to update while avoiding the confirmation prompt:
+Then update:
 
 ```bash
-set -- -f; source bootstrap.sh
+brew update
 ```
 
-### Git-free install
-
-To install these dotfiles without Git:
+If error: `/usr/local must be writable` run:
 
 ```bash
-cd; curl -#L https://github.com/mathiasbynens/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh,.osx,LICENSE-MIT.txt}
+sudo chown -R $USER:admin /usr/local
+brew update
 ```
 
-To update later on, just run that command again.
-
-### Specify the `$PATH`
-
-If `~/.path` exists, it will be sourced along with the other files, before any feature testing (such as [detecting which version of `ls` is being used](https://github.com/mathiasbynens/dotfiles/blob/aff769fd75225d8f2e481185a71d5e05b76002dc/.aliases#L21-26)) takes place.
-
-Here’s an example `~/.path` file that adds `/usr/local/bin` to the `$PATH`:
+Basic packages to install with brew:
 
 ```bash
-export PATH="/usr/local/bin:$PATH"
+brew install git wget jq openssl rbenv ruby-build pyenv node sqlite yarn tree
 ```
 
-### Add custom commands without creating a new fork
-
-If `~/.extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
-
-My `~/.extra` looks something like this:
+Basic apps to install with brew. Do not open them until finished DotFiles install!!:
 
 ```bash
-# Git credentials
-# Not in the repository, to prevent people from accidentally committing under my name
-GIT_AUTHOR_NAME="Mathias Bynens"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="mathias@mailinator.com"
-GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
+brew cask install dropbox sublime-text transmission google-chrome firefox vlc grandperspective
 ```
 
-You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/mathiasbynens/dotfiles/fork) instead, though.
+Optional:
+```bash
+brew cask install wireshark tor-browser alfred
+```
 
-### Sensible macOS defaults
-
-When setting up a new Mac, you may want to set some sensible macOS defaults:
+Cleanup brew:
 
 ```bash
-./.macos
+brew cleanup
 ```
 
-### Install Homebrew formulae
+## Step 4: iTerm2
 
-When setting up a new Mac, you may want to install some common [Homebrew](https://brew.sh/) formulae (after installing Homebrew, of course):
+iTerm2
 
 ```bash
-./brew.sh
+brew cask install iterm2
 ```
 
-Some of the functionality of these dotfiles depends on formulae installed by `brew.sh`. If you don’t plan to run `brew.sh`, you should look carefully through the script and manually install any particularly important ones. A good example is Bash/Git completion: the dotfiles use a special version from Homebrew.
+### Colors and Font Settings
 
-## Feedback
+Here are some suggested settings you can change or set, they are all optional.
 
-Suggestions/improvements
-[welcome](https://github.com/mathiasbynens/dotfiles/issues)!
+- Set hot-key to open and close the terminal to `command + option + i`
+- Go to `Preferences -> profiles -> Default -> Terminal` -> Check silence bell to disable the terminal session from making any sound
+- Select Solarized Dark as preferred color scheme under `Preferences -> Profile`
+- Change the cursor text and cursor color to yellow make it more visible
+- Change the font to 14pt Source Code Pro Lite. Source Code Pro can be downloaded using Homebrew:
+  ```bash
+  brew cask install font-source-code-pro
+  ```
 
-## Author
+### Setup iTerm to work with MacOS shortcuts ⌘←, ⌘→ and ⌥←, ⌥→
 
-| [![twitter/mathias](http://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](http://twitter.com/mathias "Follow @mathias on Twitter") |
-|---|
-| [Mathias Bynens](https://mathiasbynens.be/) |
+Open up iTerm2 `Preferences (⌘ + ,) -> Profiles -> Keys ->` Click on + icon (add new Keyboard shortcut).
 
-## Thanks to…
+| shortcut  | action  | Esc+  |
+|---|---|---|
+| ⌘←  |  Send Escape Sequence | OH  |
+| ⌘→  |  Send Escape Sequence |  OF |
+| ⌥←  |  Send Escape Sequence |  b |
+| ⌥→  |  Send Escape Sequence |  f |
 
-* @ptb and [his _macOS Setup_ repository](https://github.com/ptb/mac-setup)
-* [Ben Alman](http://benalman.com/) and his [dotfiles repository](https://github.com/cowboy/dotfiles)
-* [Cătălin Mariș](https://github.com/alrra) and his [dotfiles repository](https://github.com/alrra/dotfiles)
-* [Gianni Chiappetta](https://butt.zone/) for sharing his [amazing collection of dotfiles](https://github.com/gf3/dotfiles)
-* [Jan Moesen](http://jan.moesen.nu/) and his [ancient `.bash_profile`](https://gist.github.com/1156154) + [shiny _tilde_ repository](https://github.com/janmoesen/tilde)
-* [Lauri ‘Lri’ Ranta](http://lri.me/) for sharing [loads of hidden preferences](http://osxnotes.net/defaults.html)
-* [Matijs Brinkhuis](https://matijs.brinkhu.is/) and his [dotfiles repository](https://github.com/matijs/dotfiles)
-* [Nicolas Gallagher](http://nicolasgallagher.com/) and his [dotfiles repository](https://github.com/necolas/dotfiles)
-* [Sindre Sorhus](https://sindresorhus.com/)
-* [Tom Ryder](https://sanctum.geek.nz/) and his [dotfiles repository](https://sanctum.geek.nz/cgit/dotfiles.git/about)
-* [Kevin Suttle](http://kevinsuttle.com/) and his [dotfiles repository](https://github.com/kevinSuttle/dotfiles) and [macOS-Defaults project](https://github.com/kevinSuttle/macOS-Defaults), which aims to provide better documentation for [`~/.macos`](https://mths.be/macos)
-* [Haralan Dobrev](https://hkdobrev.com/)
-* Anyone who [contributed a patch](https://github.com/mathiasbynens/dotfiles/contributors) or [made a helpful suggestion](https://github.com/mathiasbynens/dotfiles/issues)
+
+## Step 5: Oh-my-zsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+To apply the changes you make you need to either start new shell instance or run:
+
+```bash
+$ source ~/.zshrc
+```
+
+
+## Step 6: GitHub
+
+Follow [this guide](https://sourabhbajaj.com/mac-setup/Git/) for config.
+
+Follow [official guide](https://help.github.com/en/articles/set-up-git) to Set up GitHub terminal login
+
+
+## Step 7: Dotfiles Install
+
+Clone dotfiles from github and run install script
+
+
+```bash
+zsh install.sh
+```
+
+OPTIONAL: Run the git installer:
+
+```bash
+zsh git_setup.sh
+```
+
+### Step 8: Sublime Text config
+
+Open twice ST with following command. Each time Wait for all packages to install (they are defined in DotFiles preferences).  
+
+```bash
+stt
+```
+
+## Step 9: Ruby
+
+List all available Ruby versions:
+```bash
+rbenv versions
+```
+
+Pick latest or desired Ruby version to install:
+```bash
+rbenv install 2.6.3
+```
+Set global Ruby version:
+
+```bash
+rbenv global 2.6.3
+```
+Check Ruby version:
+```bash
+ruby -v
+```
+
+### Installing some gems
+
+Basic Gems:
+
+```bash
+gem install hub bundler rspec rubocop rubocop-performance pry pry-byebug  colored octokit rake
+```
+
+
+Special thanks to this [MacOs setup guide](https://sourabhbajaj.com/mac-setup/Homebrew/Cask.html)

@@ -11,7 +11,6 @@ fi;
 
 echo "👌  CLT all done"
 
-
 echo "Install HomeBrew and Git + Sqlite + PyEnv + Rbenv + other basic formulae?"
 read brew_reply
 
@@ -27,7 +26,9 @@ read mac_reply
 if [[ mac_reply =~ ^[Yy]$ ]]; then
   ./.macos
 fi;
+
 echo "👌  MacOS preferences all done"
+
 echo "Moving and exectuing backup of dotfiles now..."
 
 backup() {
@@ -44,7 +45,7 @@ backup() {
 for name in *; do
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
-    if [[ ! "$name" =~ '\.sh$' ]] && [ "$name" != 'README.md' ] && [[ ! "$name" =~ '\.sublime-settings$' ]]; then
+    if [[ ! "$name" =~ '\.sh$' ]] && [ "$name" != 'README.md' ] && [[ ! "$name" =~ '\.sublime-settings$' ]] && [[ ! "$name" =~ '\.macos' ]]; then
       backup $target
 
       if [ ! -e "$target" ]; then
