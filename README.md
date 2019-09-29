@@ -110,7 +110,7 @@ zsh install.sh
 ```
 
 
-### Step 6: Sublime Text config
+## Step 6: Sublime Text config
 
 Open twice ST with following command. Each time Wait for all packages to install (they are defined in DotFiles preferences).  
 
