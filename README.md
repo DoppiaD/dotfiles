@@ -113,10 +113,6 @@ Open twice ST with following command. Each time Wait for all packages to install
 stt
 ```
 
-```bash
-
-```
-
 ## Step 7: GitHub
 
 Test if Git is properly installed:
