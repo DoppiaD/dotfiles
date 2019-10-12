@@ -154,3 +154,6 @@ alias bi='bundle install'
 
 # Atom editor shorter
 alias atom = 'atom .'
+
+# Quickly serve the current directory as HTTP
+alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
