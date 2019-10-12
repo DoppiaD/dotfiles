@@ -49,8 +49,9 @@ alias sudo='sudo '
 alias week='date +%V'
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+# If using RBENV do not use `sudo` to update gems
 # alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; sudo gem update --system; sudo gem update; sudo gem cleanup'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; brew doctor; gem update --system; gem update; gem cleanup'
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
@@ -150,3 +151,6 @@ alias path='echo -e ${PATH//:/\\n}'
 # Rails bundler shorter
 alias be='bundle exec'
 alias bi='bundle install'
+
+# Atom editor shorter
+alias atom = 'atom .'

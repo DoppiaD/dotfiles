@@ -15,8 +15,7 @@ source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 
 # Load rbenv if installed
-export PATH="${HOME}/.rbenv/bin:${PATH}"
-type -a rbenv > /dev/null && eval "$(rbenv init -)"
+# export PATH="${HOME}/.rbenv/bin:${PATH}"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`

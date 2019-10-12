@@ -24,7 +24,7 @@ echo "New Mac? Do you want to install basic preferences?"
 read mac_reply
 
 if [[ mac_reply =~ ^[Yy]$ ]]; then
-  ./.macos
+  source .macos
 fi;
 
 echo "MacOS preferences all done"
@@ -56,19 +56,19 @@ for name in *; do
   fi
 done
 
-REGULAR="\\033[0;39m"
-YELLOW="\\033[1;33m"
-GREEN="\\033[1;32m"
+# REGULAR="\\033[0;39m"
+# YELLOW="\\033[1;33m"
+# GREEN="\\033[1;32m"
 
-# zsh plugins
-CURRENT_DIR=`pwd`
-ZSH_PLUGINS_DIR="$HOME/.oh-my-zsh/custom/plugins"
-mkdir -p "$ZSH_PLUGINS_DIR" && cd "$ZSH_PLUGINS_DIR"
-if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
-  echo "-----> Installing zsh plugin 'zsh-syntax-highlighting'..."
-  git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-fi
-cd "$CURRENT_DIR"
+# # zsh plugins
+# CURRENT_DIR=`pwd`
+# ZSH_PLUGINS_DIR="$HOME/.oh-my-zsh/custom/plugins"
+# mkdir -p "$ZSH_PLUGINS_DIR" && cd "$ZSH_PLUGINS_DIR"
+# if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
+#   echo "-----> Installing zsh plugin 'zsh-syntax-highlighting'..."
+#   git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+# fi
+# cd "$CURRENT_DIR"
 
 setopt nocasematch
 if [[ ! `uname` =~ "darwin" ]]; then
