@@ -25,7 +25,7 @@ brew update
 Basic packages to install with brew:
 
 ```bash
-brew install git wget jq openssl rbenv pyenv node sqlite yarn tree zsh-syntax-highlighting
+brew install git wget jq openssl rbenv pyenv node sqlite yarn tree
 ```
 
 Basic apps to install with brew. **Do not open them until finished DotFiles install!!**:
@@ -91,6 +91,10 @@ To apply the changes you make you need to either start new shell instance or run
 $ source ~/.zshrc
 ```
 
+Install syntax highliting in the terminal:
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
 
 ## Step 5: Dotfiles Install
 
@@ -158,13 +162,13 @@ Verify that rbenv is properly set up using this rbenv-doctor script:
 $ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 ```
 
-Pick latest or desired Ruby version to install. Select versione (2.6.3 latest at time of writing):
+Pick latest or desired Ruby version to install. Select version (2.6.3 latest at time of writing):
 ```bash
 # list all available versions:
-$ rbenv install -l
+rbenv install -l
 
 # install a Ruby version:
-$ rbenv install 2.6.3
+rbenv install 2.6.3
 ```
 Set global Ruby version:
 
@@ -187,24 +191,16 @@ gem install hub bundler rspec rubocop rubocop-performance pry pry-byebug colored
 Add pyenv init to your shell to enable shims and autocompletion. Please make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file since it manipulates PATH during the initialization.
 
 ```bash
+# If .zshrc is installed through dotfiles install skip this step
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zhsrc
 ```
-
-To install latest Python 3 version:
+Pick latest or desired Python version to install. Select version (2.7.4 latest at time of writing):
 ```bash
-pyenv install-latest
-```
+# list all available versions:
+pyenv install --list
 
-## Step 10: Activate Syntax Highlighting in ZSH
-
-Add the following line to the last line of .zshrc
-```bash
-echo 'source #{HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc
-```
-
-If you receive "highlighters directory not found" error message, you may need to add the following to your .zshenv:
-```bash
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=#{HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/highlighters
+# install a Ruby version:
+pyenv install 2.7.4
 ```
 
 # ALL DONE..! Now reboot....

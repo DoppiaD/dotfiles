@@ -4,8 +4,8 @@ ZSH=$HOME/.oh-my-zsh
 #   https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 ZSH_THEME="robbyrussell"
 
-# Useful plugins for Rails development with Sublime Text
-plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search osx rbenv ruby)
+# Useful plugins for Rails development with Sublime Text. Syntax Highlighting is always last
+plugins=(git gitfast last-working-dir common-aliases sublime history-substring-search osx rbenv ruby zsh-syntax-highlighting)
 
 # Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -39,4 +39,10 @@ DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
+
 export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a"
+
+eval "$(rbenv init -)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
