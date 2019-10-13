@@ -203,6 +203,12 @@ pyenv install --list
 pyenv install 2.7.4
 ```
 
+## Step 10: Install macos dotfile:
+Run the following command from the terminal:
+```bash
+./.macos
+```
+
 # ALL DONE..! Now reboot....
 
 

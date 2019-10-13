@@ -20,14 +20,14 @@ git pull origin master;
 #
 # echo "Brew all done"
 
-echo "New Mac? Do you want to install basic preferences?"
-read mac_reply
-
-if [[ mac_reply =~ ^[Yy]$ ]]; then
-  source .macos
-fi;
-
-echo "MacOS preferences all done"
+# echo "New Mac? Do you want to install basic preferences?"
+# read mac_reply
+#
+# if [[ mac_reply =~ ^[Yy]$ ]]; then
+#   source .macos
+# fi;
+# 
+# echo "MacOS preferences all done"
 
 echo "Moving and executing backup of dotfiles now..."
 
