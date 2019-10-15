@@ -183,7 +183,7 @@ ruby -v
 ### Basic gems install
 
 ```bash
-gem install hub bundler rspec rubocop rubocop-performance pry pry-byebug colored octokit rake
+gem install hub bundler rspec rubocop rubocop-performance pry pry-byebug colored octokit rake rails
 ```
 
 ## Step 9 (Optional): Python
