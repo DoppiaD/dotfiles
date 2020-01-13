@@ -186,6 +186,28 @@ ruby -v
 gem install hub bundler rspec rubocop rubocop-performance pry pry-byebug colored octokit rake rails
 ```
 
+## Postgresql
+
+```bash
+brew install postgresql
+brew services start postgresql
+```
+
+To check if it worked:
+
+```bash
+psql -d postgres
+```
+
+Result of above command should be (To quit type `\q):
+
+```bash
+psql (12.1)
+Type "help" for help.
+
+postgres=#
+```
+
 ## Step 9 (Optional): Python
 
 Add pyenv init to your shell to enable shims and autocompletion. Please make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file since it manipulates PATH during the initialization.
