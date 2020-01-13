@@ -24,6 +24,10 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 # OLD exported PATH
 # export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/opt/bin:/usr/local/bin:$PATH"
 
+# Paths used to run gem commands from command line, e.g. RSPEC
+export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/lib/ruby/gems/2.5.0/bin:$PATH
+
 # Store your own aliases in the ~/.aliases file and load them here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
