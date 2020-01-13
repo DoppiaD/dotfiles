@@ -41,18 +41,19 @@ backup() {
   fi
 }
 
-#!/bin/zsh
 for name in *; do
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
-    if [[ ! "$name" =~ '\.sh$' ]] && [ "$name" != 'README.md' ] && [[ ! "$name" =~ '\.sublime-settings$' ]] && [[ ! "$name" =~ '\.macos' ]]; then
-      backup $target
+    # if [[ "$name" != '\.sh$' ]] && [ "$name" != 'README.md' ] && [[ "$name" != '\.sublime-settings$' ]] && [[ ! "$name" =~ '\.macos' ]]; then
+      if [ "$name" != '\.sh$' ]; then
+      # backup $target
 
-      if [ ! -e "$target" ]; then
-        echo "-----> Symlinking your new $target"
-        ln -s "$PWD/$name" "$target"
-      fi
-    fi
+      # if [ ! -e "$target" ]; then
+      echo "-----> Copying your new $target"
+        # ln -s "$PWD/$name" "$target" # This symlincs the target
+      rsync -avh --no-perms "$PWD/$name" "$target"; # this updates the changes from the target and add a . in front of the name
+      # fi
+    # fi
   fi
 done
 
