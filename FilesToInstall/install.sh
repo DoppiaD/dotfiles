@@ -14,6 +14,7 @@ done
 
 zsh ~/.zshrc
 
+
 echo "All finished"
 
 
