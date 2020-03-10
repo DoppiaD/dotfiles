@@ -157,3 +157,6 @@ alias atom='atom .'
 
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+
+# Display user defined routes only
+alias routes='rake routes | grep -v "/rails"'
