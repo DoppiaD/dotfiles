@@ -164,3 +164,6 @@ alias serve='rails server -b 0.0.0.0'
 
 # Display user defined routes only
 alias routes='rake routes | grep -v "/rails"'
+
+# Load SSH Github config from Keychain (only required after a re-start)
+alias ghubload='ssh-add --apple-load-keychain ~/.ssh/id_ed25519'
