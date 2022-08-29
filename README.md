@@ -159,7 +159,7 @@ rbenv init
 
 Verify that rbenv is properly set up using this rbenv-doctor script:
 ```bash
-$ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+$ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
 ```
 
 Pick latest or desired Ruby version to install. Select version (2.6.3 latest at time of writing):
