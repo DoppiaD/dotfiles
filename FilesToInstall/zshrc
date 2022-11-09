@@ -2,15 +2,15 @@ ZSH=$HOME/.oh-my-zsh
 
 # ###### HOMEBREW
 # Enable Brew completion (needs to be called before OH MY ZSH)
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# if type brew &>/dev/null
+# then
+#   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-  autoload -Uz compinit
-  compinit
-fi
+#   autoload -Uz compinit
+#   compinit
+# fi
 
-# Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
+# (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
 
 ###### OH-MY-ZSH
@@ -26,9 +26,13 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
+# Disable warning about insecure completion-dependent directories
+ZSH_DISABLE_COMPFIX=true
+
 # Actually load Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
+unalias lt # we need `lt` for https://github.com/localtunnel/localtunnel
 
 ###### RUBY + RAILS
 # Load rbenv if installed (To manage Ruby versions)
