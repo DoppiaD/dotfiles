@@ -100,3 +100,6 @@ export BUNDLER_EDITOR=code
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
+
+# Set ipdb as the default Python debugger
+export PYTHONBREAKPOINT=ipdb.set_trace
