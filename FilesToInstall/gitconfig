@@ -126,3 +126,6 @@
 
 [init]
 	defaultBranch = master
+[user]
+	email = davidelora@outlook.com
+	name = DoppiaD
