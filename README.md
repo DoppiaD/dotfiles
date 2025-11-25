@@ -235,9 +235,9 @@ Run the following command from the terminal:
 
 
 ## QUICK NOTES
-gaa - git add all
-gcam - git commit all -m
-ggp - git push origin $(current_branch)
+- gaa - git add all
+- gcam - git commit all -m
+- ggp - git push origin $(current_branch)
 
 Source: https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index
 
