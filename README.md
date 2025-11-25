@@ -234,6 +234,14 @@ Run the following command from the terminal:
 # ALL DONE..! Now reboot....
 
 
+## QUICK NOTES
+gaa - git add all
+gcam - git commit all -m
+ggp - git push origin $(current_branch)
+
+Source: https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index
+
+
 Special thanks to:
 - This [MacOs setup guide](https://sourabhbajaj.com/mac-setup/Homebrew/Cask.html) by Sourabh Bajaj
 - Mathias dotfiles [mathiasbynens](https://mths.be/dotfiles)
